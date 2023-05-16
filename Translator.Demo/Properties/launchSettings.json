@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Translator.Demo": {
+      "commandName": "Project",
+      "commandLineArgs": "input.xml en-us Common Apps"
+    }
+  }
+}
