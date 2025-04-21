@@ -1,6 +1,9 @@
 ﻿<root>
 	<data key='NextPage'>
 		<value lang='en-us'>Next page</value>
-		<value lang='en-us'>Page suivante</value>
+		<value lang='fr-fr'>Page suivante</value>
+	</data>
+	<data key='Back'>
+		<value lang='en-us'>Back</value>
 	</data>
 </root>

@@ -51,7 +51,7 @@ public class TranslationService : ITranslationService
 
     public string ExportToCSharpEnum(TranslationList translationList, string language, string name, string namespaceName)
     {
-        var enumeCases = string.Join($"\n\t\t", translationList.Translations.Select(x => GenerateCSharpEnumCase(language, x)));
+        var enumeCases = string.Join($"\n\t", translationList.Translations.Select(x => GenerateCSharpEnumCase(language, x)));
         return $"namespace {namespaceName};\n\npublic enum {name}Key\n{{\n\t{enumeCases}\n}}";
     }
 

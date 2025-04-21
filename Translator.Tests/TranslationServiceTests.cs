@@ -97,6 +97,17 @@ public class TranslationServiceTests
         Assert.AreEqual(expectedResw, resw);
     }
 
+    [TestMethod]
+    public void TranslationService_WhenVerifyingTheFlowTwoEntries_ShouldGenerateContent()
+    {
+        var input = "<root><data key='Back1'> <value lang='en-us'>Back1</value> </data> <data key='Back2'> <value lang='en-us'>Back2</value> </data></root>";
+        var expectedEnumCode = $"namespace Namespace1;\n\npublic enum Strings1Key\n{{\n\tBack1, \t// Back1\n\tBack2, \t// Back2\n}}";
+
+        var translationList = translationService.ImportTranslationList(input);
+        var enumCode = translationService.ExportToCSharpEnum(translationList, "en-us", "Strings1", "Namespace1");
+        Assert.AreEqual(expectedEnumCode, enumCode);
+    }
+
     /*
         Input:
         <root>
