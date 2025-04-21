@@ -1,21 +1,20 @@
-﻿namespace Translator
+﻿namespace Translator;
+
+public static class StringHelpers
 {
-    public static class StringHelpers
+    public static string RemoveCSharpUnsupportedCharacters(this string word)
     {
-        public static string RemoveCSharpUnsupportedCharacters(this string word)
+        var excludedCharacters = " -&.,·'!:/";
+        foreach (var character in excludedCharacters)
         {
-            var excludedCharacters = " -&.,·'!:/";
-            foreach (var character in excludedCharacters)
-            {
-                word = word.Replace($"{character}", "");
-            }
-
-            return word;
+            word = word.Replace($"{character}", "");
         }
 
-        public static string ReplaceReswUnsuportedCharacters(this string value)
-        {
-            return value.Replace("&", "&amp;");
-        }
+        return word;
+    }
+
+    public static string ReplaceReswUnsuportedCharacters(this string value)
+    {
+        return value.Replace("&", "&amp;");
     }
 }
